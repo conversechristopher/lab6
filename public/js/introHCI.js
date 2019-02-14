@@ -3,6 +3,7 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+	$("#a").click(addProjectDetails);
 })
 
 /*
@@ -27,4 +28,38 @@ function addProjectDetails(e) {
 	var idNumber = projectID.substr('project'.length);
 
 	console.log("User clicked on project " + idNumber);
+	console.log("Websiteis: /project/" + idNumber)
+
+	$.get("http://localhost:3000/project/" + idNumber, asd);
 }
+
+function asd(response) {
+
+	console.log(response);
+
+	//$("#" + response["id"] + " .details").html("foo");
+	var ID = "#project" + response["id"] + " .details";
+	console.log("thing is: " + ID);
+	$("input[id=ID]").html("foo"); 
+	//$(".project .details").html("foo");
+	//$("#project1 .details").html("FOO");
+}
+
+function addProject() {
+	e.preventDefault();
+	var projectID = $(this).closest('.project').attr('id');
+	var idNumber = projectID.substr('project'.length);
+	console.log("User clicked on project " + idNumber);
+
+
+}
+
+
+/*function addProject(result) {
+  e.preventDefault();
+  var projectHTML = '<a href="#" class="thumbnail">' +
+    '<img src="' + result['image'] + '" class="img">' +
+    '<p>' + result['title'] + '</p>' +
+    '<p><small>' + result['date'] +
+    '</small></p></a>'; 
+}*/
