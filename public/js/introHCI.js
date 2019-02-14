@@ -39,10 +39,16 @@ function asd(response) {
 
 	//$("#" + response["id"] + " .details").html("foo");
 	var ID = "#project" + response["id"] + " .details";
-	console.log("thing is: " + ID);
-	$("input[id=ID]").html("foo"); 
-	//$(".project .details").html("foo");
-	//$("#project1 .details").html("FOO");
+	var ids = response["id"];
+
+	var projectHTML = '<a href="#" class="thumbnail">' +
+    '<img src="' + response['image'] + '" class="detailsImage">' +
+    '<p>' + response['summary'] + '</p>' +
+    '<p><small>' + response['date'] +
+    '</small></p></a>'; 
+
+    $(ID).html(projectHTML);
+
 }
 
 function addProject() {
