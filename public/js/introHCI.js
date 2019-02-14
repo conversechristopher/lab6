@@ -30,7 +30,7 @@ function addProjectDetails(e) {
 	console.log("User clicked on project " + idNumber);
 	console.log("Websiteis: /project/" + idNumber)
 
-	$.get("http://localhost:3000/project/" + idNumber, asd);
+	$.get("https://lab6-cogs120cc.herokuapp.com/project/" + idNumber, asd);
 }
 
 function asd(response) {
